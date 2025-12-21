@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="contact-page">
+
+    <!-- HEADER -->
+    <div class="contact-header">
+        <span class="contact-pill">Contact</span>
+        <h1>Always happy to <span>connect.</span></h1>
+        <p class="contact-subtext">
+            Have an idea for a product? Mail me at  
+            <strong>balkrishna28tiwari@gmail.com</strong>
+        </p>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="contact-grid">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-info">
+
+            <div class="info-card">
+                <h3>WhatsApp</h3>
+                <p>Tell me about your idea and I’m here to help.</p>
+                <a href="https://wa.me/917016324864" target="_blank">
+                    +91 7016324864
+                </a>
+            </div>
+
+            <div class="info-card">
+                <h3>LinkedIn</h3>
+                <p>Let’s connect professionally.</p>
+                <a href="https://www.linkedin.com/in/bkt0/" target="_blank">
+                    View Profile
+                </a>
+            </div>
+
+            <div class="info-card">
+                <h3>GitHub</h3>
+                <p>Check out my projects & code.</p>
+                <a href="https://github.com/krsna-t" target="_blank">
+                    https://github.com/krsna-t
+                </a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <form class="contact-form" method="post">
+            {% csrf_token %}
+
+            <label>Name *</label>
+            <input type="text" name="name" required>
+
+            <label>Email *</label>
+            <input type="email" name="email" required>
+
+            <label>Request *</label>
+            <select name="request" required>
+                <option value="">Select a request</option>
+                <option>Website Development</option>
+                <option>Backend / API</option>
+                <option>Internship / Job</option>
+                <option>Other</option>
+            </select>
+
+            <label>Message *</label>
+            <textarea name="message" rows="6" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

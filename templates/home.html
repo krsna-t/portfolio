@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-badge">
+        Python Backend Developer
+    </div>
+
+    <h1 class="hero-title">
+        Building scalable backend systems<br>
+        <span>with Python.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+        I build backend-driven web applications and APIs using
+        Python, Django, Flask, and FastAPI, with structured
+        database design using MySQL and MongoDB.
+    </p>
+
+    <a href="#contact" class="hero-cta">
+        Open to entry-level opportunities
+    </a>
+</section>
+
+
+<div class="dotted-line"></div>
+
+<section class="showcase">
+    <div class="showcase-track" id="track">
+        <img src="{% static 'images/edtube.png' %}">
+        <img src="{% static 'images/edtube2.png' %}">
+        <img src="{% static 'images/pomodoro04.png' %}">
+        <img src="{% static 'images/LMS.png' %}">
+        </div>
+</section>
+
+
+<!-- BOTTOM DIVIDER -->
+<div class="dotted-line"></div>
+
+<!-- SECTION LABEL -->
+<section class="projects-title">
+    Here’s what I can do
+</section>
+
+<!-- SKILLS SECTION -->
+<section class="skills-marquee">
+    <div class="skills-track" id="skillsTrack">
+            <div class="skill-item">
+                <img src="{% static 'images/skills/python.png' %}" alt="Python">
+                <span>Python</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/django.png' %}" alt="Django">
+                <span>Django</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/flask.png' %}" alt="Flask">
+                <span>Flask</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/fastapi.png' %}" alt="FastAPI">
+                <span>FastAPI</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/html.png' %}" alt="HTML">
+                <span>HTML</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/css.png' %}" alt="CSS">
+                <span>CSS</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/js.png' %}" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/react.png' %}" alt="React">
+                <span>React</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/node.png' %}" alt="Node.js">
+                <span>Node.js</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/mysql.png' %}" alt="MySQL">
+                <span>MySQL</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/mongodb.png' %}" alt="MongoDB">
+                <span>MongoDB</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/aws.png' %}" alt="AWS">
+                <span>AWS</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/git.png' %}" alt="Git">
+                <span>Git</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/github1.png' %}" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/linux.png' %}" alt="Linux">
+                <span>Linux</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/matplotlib.png' %}" alt="Matplotlib">
+                <span>Matplotlib</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/numpy.png' %}" alt="NumPy">
+                <span>NumPy</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/pandas.png' %}" alt="Pandas">
+                <span>Pandas</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/sqla.png' %}" alt="SQLAlchemy">
+                <span>SQLAlchemy</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="{% static 'images/skills/streamlit.png' %}" alt="Streamlit">
+                <span>Streamlit</span>
+            </div>
+
+    </div>
+</section>
+
+
+<!-- BOTTOM DIVIDER -->
+<div class="dotted-line"></div>
+
+<!-- PROJECT PREVIEW SECTION -->
+<section class="projects-section home-projects">
+
+    <!-- HEADER -->
+    <div class="projects-header home-projects-header">
+        <div class="projects-heading">
+            <p class="projects-label">WORK</p>
+
+            <h2 class="projects-title">
+                <strong>Here are a few</strong><br>
+                <em>projects</em>
+            </h2>
+        </div>
+
+        <a href="/projects/" class="project-btn view-all-btn">
+            View all
+        </a>
+    </div>
+
+    <!-- GRAY CONTAINER -->
+    <div class="projects-wrapper">
+
+        <div class="projects-grid">
+
+            <!-- CARD 1 -->
+            <div class="project-card">
+                <div class="project-image project-bg-1"></div>
+                <div class="project-content">
+                    <h3>EDTube</h3>
+                    <p>
+                        A focused learning platform combining YouTube content with
+                        Pomodoro-based productivity.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://your-edtube-link.com" target="_blank" class="project-btn">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="project-card">
+                <div class="project-image project-bg-2"></div>
+                <div class="project-content">
+                    <h3>Pomodoro App</h3>
+                    <p>
+                        A clean productivity app designed to help users stay focused
+                        using time blocks.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://your-pomodoro-link.com" target="_blank" class="project-btn">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="project-card">
+                <div class="project-image project-bg-3"></div>
+                <div class="project-content">
+                    <h3>Library Management</h3>
+                    <p>
+                        A full-stack library system with user roles, book tracking,
+                        and admin controls.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://your-lms-link.com" target="_blank" class="project-btn">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="project-card">
+                <div class="project-image project-bg-4"></div>
+                <div class="project-content">
+                    <h3>Task Time Tracker</h3>
+                    <p>
+                        An offline-first task tracker with analytics and productivity
+                        insights.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://your-tracker-link.com" target="_blank" class="project-btn">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="projects-footer-cta">
+        <a href="/projects/" class="project-btn projects-cta-btn">
+            View all projects
+        </a>
+    </div>
+</section>
+<div class="whoami-block">
+
+    <section class="whoami-section">
+
+        <div class="whoami-card reveal">
+
+            <div class="whoami-pill reveal delay-1">WHO AM I</div>
+
+            <h1 class="whoami-title reveal delay-2">
+                Balkrishna Tiwari —
+            </h1>
+
+            <h2 class="whoami-role reveal delay-3">
+                Full-Stack Developer & Data Enthusiast
+            </h2>
+
+            <p class="whoami-text reveal delay-4">
+                Bridging the gap between data science and the web by transforming raw
+                information into intelligent, functional products.
+            </p>
+
+            <p class="whoami-text reveal delay-4">
+                I architect systems for logic, but I’m driven by the insights hidden
+                in data.
+            </p>
+
+            <div class="fade-container reveal delay-5">
+                <p class="whoami-text fade-text">
+                    My process involves the entire lifecycle — from training models
+                    with <strong>Scikit-learn</strong> and <strong>TensorFlow</strong>
+                    to architecting backends with <strong>FastAPI</strong> and
+                    <strong>Django</strong>. I believe data is only as valuable as it
+                    is accessible, which is why I use <strong>React</strong> and
+                    <strong>Plotly</strong> to turn complex datasets into interactive,
+                    human-friendly experiences.
+                </p>
+            </div>
+
+            <a href="/about/" class="load-more-btn reveal delay-5">
+                Load more about me <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="policy-wrapper">
+
+    <!-- META -->
+    <div class="policy-meta">
+        <span>Last updated: {{ last_updated|default:"Dec 20, 2025" }}</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="policy-title">Privacy policy</h1>
+
+    <!-- CONTENT CARD -->
+    <div class="policy-card">
+
+        <p class="policy-intro">
+            This Privacy Policy explains how I collect, use, and protect information
+            when you visit my portfolio website.
+        </p>
+
+        <section class="policy-section">
+            <h3>1. Introduction</h3>
+            <p>
+                Welcome to my portfolio. I value your privacy and am committed
+                to protecting any personal information you share with me.
+            </p>
+        </section>
+
+        <section class="policy-section">
+            <h3>2. Data I Collect</h3>
+
+            <p><strong>Contact Information:</strong><br>
+                If you use my contact form, I collect your name and email address
+                to reply to you.
+            </p>
+
+            <p><strong>Usage Data:</strong><br>
+                I use analytics tools to understand which projects are most popular.
+                This includes anonymized data such as browser type and time spent
+                on the site.
+            </p>
+        </section>
+
+        <section class="policy-section">
+            <h3>3. Third-Party Services</h3>
+            <p>
+                My site is hosted by a third-party hosting provider. They may collect
+                system logs for security purposes. I may also use external tools
+                for scheduling or email communication.
+            </p>
+        </section>
+
+        <section class="policy-section">
+            <h3>4. Your Rights</h3>
+            <p>
+                You can contact me at
+                <a href="mailto:balkrishna28tiwari@gmail.com">
+                    balkrishna28tiwari@gmail.com
+                </a>
+                at any time to request deletion of any communication or stored data.
+            </p>
+        </section>
+
+        <section class="policy-section">
+            <h3>5. Changes to This Policy</h3>
+            <p>
+                I may update this policy occasionally. Any changes will be posted
+                on this page.
+            </p>
+        </section>
+
+    </div>
+
+</section>
+
+{% endblock %}
