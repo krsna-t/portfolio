@@ -1,0 +1,554 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About — Balkrishna{% endblock %}
+
+{% block extra_head %}
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ---------- TEXT ---------- */
+  .heading {
+    font-size: 44px;
+    line-height: 1.25;
+    font-weight: 300;
+    color: #7a7878ff;
+    margin-bottom: 40px;
+  }
+
+  .bold {
+    font-weight: 700;
+    color: #111;
+  }
+
+  .phonetic {
+    color: #000000ff;
+    font-size: 14px;
+    opacity: 0.5;
+  }
+
+  /* ---------- BIO BOX ---------- */
+  .bio-box {
+    max-width: 520px;
+    background: #f1f1f1;
+    padding: 28px;
+    font-size: 15px;
+    line-height: 1.7;
+    border-left: 4px solid #111;
+    margin-bottom: 40px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bio-box:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* ---------- CONNECT BUTTON ---------- */
+  .connect-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    border: 1px solid #d4d4d4;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+
+  .connect-btn:hover {
+    transform: translateY(-3px);
+  }
+
+  .btn-bg {
+    position: absolute;
+    inset: 0;
+    background: #111;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+
+  .connect-btn:hover .btn-bg {
+    transform: translateX(0);
+  }
+
+  .icon,
+  .btn-text {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .connect-btn:hover .icon,
+  .connect-btn:hover .btn-text {
+    color: white;
+  }
+
+  .connect-btn:hover .icon {
+    transform: translateX(4px);
+  }
+
+  /* ---------- IMAGE ---------- */
+  .image-wrapper {
+    position: relative;
+    max-width: 360px;
+    margin: auto;
+  }
+
+  .image-capsule {
+    aspect-ratio: 3 / 4;
+    border-radius: 160px;
+    overflow: hidden;
+    background: #eef1ff;
+    border: 1px solid #ddd;
+  }
+
+  .image-capsule img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---------- LABELS ---------- */
+  .label {
+    position: absolute;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: white;
+  }
+
+  .label.yellow {
+    background: #fde047;
+    top: -24px;
+    left: -40px;
+    z-index: 1;
+  }
+
+  .label.yellow .sub {
+    font-size: 12px;
+    border-top: 1px dashed rgba(0,0,0,0.4);
+    margin-top: 6px;
+    padding-top: 4px;
+    z-index: 2;
+  }
+
+  .label.right {
+    top: 42%;
+    right: -60px;
+    z-index: 3;
+  }
+
+  .label.bottom-left {
+    background: #e5e5e5;
+    bottom: 32px;
+    left: 28px;
+  }
+
+  /* ---------- FLOATING ---------- */
+  @keyframes floatSlow {
+    0% { transform: translateY(8px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(8px); }
+  }
+
+  @keyframes floatMedium {
+    0% { transform: translateY(6px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(6px); }
+  }
+
+  @keyframes floatFast {
+    0% { transform: translateY(4px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(4px); }
+  }
+
+  .animate-float-slow { animation: floatSlow 5s ease-in-out infinite; }
+  .animate-float-medium { animation: floatMedium 4s ease-in-out infinite; }
+  .animate-float-fast { animation: floatFast 3.5s ease-in-out infinite; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<main class="max-w-[1200px] mx-auto px-6 py-24">
+
+  <section class="grid md:grid-cols-[1.3fr_0.7fr] gap-20 items-start reveal">
+
+    <!-- LEFT -->
+    <div>
+      <h1 class="heading">
+        Hey! I’m <span class="bold">Balkrishna</span>
+        <span class="phonetic">[bʌlˈkrɪʃnə]</span>,<br/>
+        a builder & data enthusiast based in<br/>
+        <span class="bold">Gujarat</span>
+      </h1>
+
+      <div class="bio-box">
+        <strong>A final-year engineer</strong> with a passion for Python development
+        and intelligent systems. I focus on making data usable and interfaces intuitive.
+      </div>
+
+      <a href="#" class="connect-btn">
+        <span class="btn-bg"></span>
+        <i data-lucide="send" class="icon"></i>
+        <span class="btn-text">Let’s connect</span>
+      </a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="image-wrapper">
+
+      <div class="label yellow animate-float-slow">
+        <div class="font-bold">0 → 1 Builder</div>
+        <div class="sub">From Concept to Deployment</div>
+      </div>
+
+      <div class="label right animate-float-medium">
+        Data Engineering
+      </div>
+
+      <!-- 🔥 ONLY CHANGE APPLIED HERE -->
+      <div class="label bottom-left animate-float-fast">
+        Python Full Stack Developer
+      </div>
+
+      <div class="image-capsule">
+        <img
+          src="{% static 'images/profile.png' %}"
+          alt="Profile"
+        />
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+<div class="reveal max-w-[1200px] mx-auto px-6 py-1">
+  <div class="relative py-10 px-8 bg-[#f5f5f5] border-2 border-dashed border-neutral-800 rounded-sm">
+    <p class="text-xl md:text-2xl text-center text-neutral-800 font-medium leading-relaxed italic">
+      "Even when the path is unclear, I possess the resolve to find the solution and the discipline to see it through."
+    </p>
+  </div>
+</div>
+<section class="reveal max-w-[1200px] mx-auto px-6 py-24">
+  <div class="mb-16 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+    <h2 class="flex items-center gap-4 text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+      <i data-lucide="terminal" class="text-neutral-400 w-8 h-8"></i>
+      Technical Skills
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <div class="group relative bg-[#fafafa] border border-neutral-200 p-8 rounded-[32px] transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] opacity-0 animate-[slideUp_0.8s_ease-out_0.2s_forwards]">
+      <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-black/20">
+        <i data-lucide="code-2" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 mb-3">Programming</h3>
+      <p class="text-neutral-500 text-sm mb-6 leading-relaxed">Core foundations and styling languages.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Python</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Java</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">C</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">JavaScript</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">HTML</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">CSS</span>
+      </div>
+    </div>
+
+    <div class="group relative bg-[#fafafa] border border-neutral-200 p-8 rounded-[32px] transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] opacity-0 animate-[slideUp_0.8s_ease-out_0.4s_forwards]">
+      <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-black/20">
+        <i data-lucide="layers" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 mb-3">Frameworks</h3>
+      <p class="text-neutral-500 text-sm mb-6 leading-relaxed">Modern web and data science libraries.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Django</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Flask</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">React</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Node.js</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Pandas</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">NumPy</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Matplotlib</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Socket.io</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Tailwind</span>
+      </div>
+    </div>
+
+    <div class="group relative bg-[#fafafa] border border-neutral-200 p-8 rounded-[32px] transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] opacity-0 animate-[slideUp_0.8s_ease-out_0.6s_forwards]">
+      <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-black/20">
+        <i data-lucide="monitor" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 mb-3">Software</h3>
+      <p class="text-neutral-500 text-sm mb-6 leading-relaxed">Analytics, creative tools, and OS.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Power BI</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Tableau</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Figma</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Canva</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">CapCut</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Streamlit</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Tkinter</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Linux</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Windows</span>
+      </div>
+    </div>
+
+    <div class="group relative bg-[#fafafa] border border-neutral-200 p-8 rounded-[32px] transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] opacity-0 animate-[slideUp_0.8s_ease-out_0.8s_forwards]">
+      <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-black/20">
+        <i data-lucide="wrench" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 mb-3">Tools</h3>
+      <p class="text-neutral-500 text-sm mb-6 leading-relaxed">Databases, cloud, and productivity.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">MySQL</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">MongoDB</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">AWS</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">Git</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">GitHub</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">VS Code</span>
+        <span class="px-3 py-1.5 bg-neutral-200/50 rounded-xl text-[11px] font-bold text-neutral-700 transition-all duration-300 group-hover:bg-black group-hover:text-white border border-transparent">MS Tools</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="reveal max-w-[1200px] mx-auto px-6 py-8">
+  <div class="mb-10 transition-all duration-700 opacity-0 translate-y-10 [.active_&]:opacity-100 [.active_&]:translate-y-0">
+    <h2 class="flex items-center gap-4 text-3xl md:text-4xl font-bold text-neutral-900 mb-2">
+      <i data-lucide="graduation-cap" class="text-neutral-400 w-8 h-8"></i>
+      Education
+    </h2>
+  </div>
+
+  <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+    
+    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group transition-all duration-1000 delay-200 opacity-0 translate-y-20 [.active_&]:opacity-100 [.active_&]:translate-y-0">
+      <div class="flex items-center justify-center w-10 h-10 rounded-full border border-neutral-200 bg-white group-hover:border-black transition-all duration-300 z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <i data-lucide="university" class="w-5 h-5 text-neutral-500 group-hover:text-black"></i>
+      </div>
+      <div class="w-[calc(100%-4rem)] md:w-[45%] bg-[#fafafa] border border-neutral-200 p-6 rounded-[24px] transition-all duration-500 hover:bg-white hover:border-black hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest">2022 — 2026</span>
+          <span class="px-2 py-1 bg-black text-white rounded text-[10px] font-bold">Current</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-900">Bachelor of Engineering</h3>
+        <p class="text-sm text-neutral-500 font-medium mb-2">GTU-ITR, Mehsana</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-neutral-100 rounded-full border border-neutral-200">
+          <span class="text-[11px] font-bold text-neutral-700">CGPA (Sem 6): 8.31</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group transition-all duration-1000 delay-500 opacity-0 translate-y-20 [.active_&]:opacity-100 [.active_&]:translate-y-0">
+      <div class="flex items-center justify-center w-10 h-10 rounded-full border border-neutral-200 bg-white group-hover:border-black transition-all duration-300 z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <i data-lucide="book-open" class="w-5 h-5 text-neutral-500 group-hover:text-black"></i>
+      </div>
+      <div class="w-[calc(100%-4rem)] md:w-[45%] bg-[#fafafa] border border-neutral-200 p-6 rounded-[24px] transition-all duration-500 hover:bg-white hover:border-black hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+        <div class="mb-2">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest">2020 — 2022</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-900">Higher Secondary (12th)</h3>
+        <p class="text-sm text-neutral-500 font-medium">Leo school of Science and Commerece, GHSEB</p>
+      </div>
+    </div>
+
+    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group transition-all duration-1000 delay-700 opacity-0 translate-y-20 [.active_&]:opacity-100 [.active_&]:translate-y-0">
+      <div class="flex items-center justify-center w-10 h-10 rounded-full border border-neutral-200 bg-white group-hover:border-black transition-all duration-300 z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <i data-lucide="school" class="w-5 h-5 text-neutral-500 group-hover:text-black"></i>
+      </div>
+      <div class="w-[calc(100%-4rem)] md:w-[45%] bg-[#fafafa] border border-neutral-200 p-6 rounded-[24px] transition-all duration-500 hover:bg-white hover:border-black hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+        <div class="mb-2">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest">2019 — 2020</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-900">Secondary School (10th)</h3>
+        <p class="text-sm text-neutral-500 font-medium">Sunlight School, GSEB</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="dotted-line"></div>
+{% comment %}  {% endcomment %}
+<section class="showcase reveal w-full py-4 bg-white overflow-hidden">
+  <div class="max-w-[1200px] mx-auto px-6 mb-16">
+    <div class="flex items-center gap-4 mb-3">
+      <div class="p-3 bg-neutral-900 rounded-2xl shadow-lg">
+        <i data-lucide="award" class="text-white w-6 h-6"></i>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+        Competitions & Activities
+      </h2>
+    </div>
+    <p class="text-neutral-500 text-base md:text-lg ml-16 max-w-2xl leading-relaxed">
+      A continuous stream of hackathons, technical sessions, and workshops where I have tested my skills and shared my knowledge.
+    </p>
+  </div>
+
+  <div class="showcase-container relative w-full border-y border-neutral-100 py-12 bg-gradient-to-b from-[#fafafa] to-white">
+    
+    <div class="absolute left-0 top-0 z-20 h-full w-40 md:w-80 bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 z-20 h-full w-40 md:w-80 bg-gradient-to-l from-white via-white/90 to-transparent pointer-events-none"></div>
+
+    <div class="showcase-track" id="track">
+        <div class="activity-card muted">
+          <span class="tag">Hackathon</span>
+          <h4>SIH: 2025</h4>
+          <p>Developed an immersive disaster simulation system to enhance regional preparedness, leveraging game mechanics to solve complex logistical challenges in emergency management, and secured a position among the top 3 teams in the college.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="{% static 'images/about/sih2025.png' %}" alt="Session">
+        </div>
+
+        <div class="activity-card">
+          <span class="tag">Design Engineering</span>
+          <h4>CyTrack</h4>
+          <p>During Design Engineering (Semesters 5 & 6), I built CyTrack, a real-time platform converting security data into visual intelligence. I engineered a dashboard with a global threat heatmap and historical analytics to track ransomware and infrastructure exploits. By applying design thinking, I bridged frontend excellence with data engineering to deliver a professional-grade cybersecurity monitoring solution.</p>
+        </div>
+        <div class="image-card">
+          <img src="{% static 'images/about/sih2024.png' %}" alt="Mentorship">
+        </div>
+        <div class="activity-card">
+          <span class="tag">Hackathon</span>
+          <h4>SIH: 2024</h4>
+          <p>Developed a comprehensive, interactive dashboard designed for the real-time monitoring and analysis of global cybersecurity incidents. The platform, CyTrack, provides security professionals with a centralized "command center" to visualize attack patterns, monitor live threat vectors, and gain actionable intelligence into the evolving cyber landscape.</p>
+        </div>
+        <div class="image-card">
+          <img src="{% static 'images/about/gtu.png' %}" alt="Session">
+        </div>
+        
+        <div class="activity-card">
+          <span class="tag">SSIP</span>
+          <h4>SSIP:2025</h4>
+          <p>To address an SSIP problem statement on outdated digital governance, our team, The Civic Co., developed a mobile app for the Jamnagar Municipal Corporation (JMC). Mentored by Prof. Vijay Khatta, we engineered a functional prototype to streamline property tax, certificates, and grievance reporting via a user-centric, accessible interface.</p>
+        </div>
+        <div class="image-card">
+          <img src="{% static 'images/about/gtuc.png' %}" alt="Session">
+        </div>
+        <div class="activity-card">
+          <span class="tag">SSIP</span>
+          <h4>SSIP:2025</h4>
+          <p>We delivered a student pitch at GTU Innovation, demonstrating a modular design system to improve India's E-Government usability. The presentation—led by Tiwari Balkrishna and team members—received high praise from the GTU Vice Chancellor for its technical execution and professional business model.</p>
+        </div>
+        <div class="image-card">
+          <img src="{% static 'images/about/opic.jpeg' %}" alt="Session">
+        </div>
+
+    </div>
+  </div>
+</section>
+<style>
+    .showcase-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .showcase-track {
+        display: flex;
+        width: max-content;
+        /* 15s speed as per your preference */
+        animation: scroll 40s linear infinite;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        /* Moves half-way because the track is doubled by JS */
+        to { transform: translateX(-50%); } 
+    }
+
+    /* Card Styles */
+    .activity-card, .image-card {
+        flex-shrink: 0;
+    }
+
+    .activity-card {
+        width: 450px;
+        height: 300px;
+        padding: 44px;
+        background: white;
+        border-left: 1px solid rgba(0,0,0,0.05);
+        border-right: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.45s ease;
+    }
+
+    .activity-card.muted { background: #f9f9f9; }
+    .activity-card:hover { transform: translateY(-8px); background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.08); z-index: 10; }
+
+    .image-card { width: 500px; height: 300px; overflow: hidden; }
+    .image-card img { 
+        width: 100%; height: 100%; object-fit: cover; 
+        filter: grayscale(100%); transition: all 0.8s ease; 
+    }
+    .image-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+    /* Labels & Text */
+    .tag { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: #8b8b8b; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .activity-card h4 { font-size: 22px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .activity-card p { font-size: 14px; color: #555; line-height: 1.6; }
+</style>
+{% comment %}  {% endcomment %}
+<style>
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+<style>
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  lucide.createIcons();
+</script>
+{% endblock %}

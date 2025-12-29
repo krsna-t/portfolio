@@ -4,9 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna | Python Backend Developer</title>
+
+    <title>{% block title %}Krishna | Python Backend Developer{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeUp {
+            from {
+            opacity: 0;
+            transform: translateY(16px);
+            }
+            to {
+            opacity: 1;
+            transform: translateY(0);
+            }
+        }
+
+  
+        @keyframes blurReveal {
+            from {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(8px);
+            }
+            to {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+            }
+        }
+
+  .blur-word {
+    display: inline-block;
+    opacity: 0;
+    animation: blurReveal 0.6s ease-out forwards;
+  }
+</style>
+
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    {% block extra_head %}{% endblock %}
+    
 </head>
 <body>
 
@@ -14,13 +55,13 @@
 
     <nav class="navbar">
         <div class="nav-left">
-            <span class="logo">BKT.</span>
+            <span class="logo"><a href="/">BKT.</a></span>
         </div>
 
         <ul class="nav-center">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/projects/">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
 
         <div class="nav-right">
@@ -45,17 +86,25 @@
                 something worth taking with you.
             </p>
 
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" aria-label="LinkedIn">
-                    in
-                </a>
-                <a href="https://github.com/YOUR_GITHUB" target="_blank" aria-label="GitHub">
-                    gh
-                </a>
-                <a href="mailto:balkrishna28tiwari@gmail.com" aria-label="Email">
-                    @
-                </a>
-            </div>
+            <div class="flex gap-[14px]">
+    <a href="https://www.linkedin.com/in/bkt0/" 
+       target="_blank" 
+       class="w-[44px] h-[44px] border border-dashed border-[#ccc] rounded-full flex items-center justify-center text-black text-[14px] transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:border-black"
+       aria-label="LinkedIn">
+        <i data-lucide="linkedin" class="w-4 h-4"></i>
+    </a>
+    <a href="https://github.com/krsna-t" 
+       target="_blank" 
+       class="w-[44px] h-[44px] border border-dashed border-[#ccc] rounded-full flex items-center justify-center text-black text-[14px] transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:border-black"
+       aria-label="GitHub">
+        <i data-lucide="github" class="w-4 h-4"></i>
+    </a>
+    <a href="mailto:balkrishna28tiwari@gmail.com" 
+       class="w-[44px] h-[44px] border border-dashed border-[#ccc] rounded-full flex items-center justify-center text-black text-[14px] transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:border-black"
+       aria-label="Email">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+    </a>
+</div>
         </div>
 
         <!-- RIGHT -->
@@ -64,15 +113,15 @@
             <div class="footer-column">
                 <h4>Portfolio</h4>
                 <a href="/">Home</a>
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
+                <a href="/projects">Work</a>
+                <a href="/about">About</a>
                 <a href="/contact">Contact</a>
             </div>
 
             <div class="footer-column">
                 <h4>Information</h4>
-                <a href="#">Privacy policy</a>
-                <a href="#">Terms</a>
+                <a href="/privacy">Privacy policy</a>
+                <a href="/terms">Terms</a>
             </div>
 
         </div>
@@ -84,7 +133,9 @@
     </div>
 </footer>
 
-
+<script>
+  lucide.createIcons(); 
+</script>
 <script src="{% static 'js/carousel.js' %}"></script>
 
 </body>

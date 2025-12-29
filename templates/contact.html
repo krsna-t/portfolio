@@ -4,8 +4,19 @@
 {% block content %}
 
 <section class="contact-page">
+    
+    {% if messages %}
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        {% for message in messages %}
+        <div class="info-card" style="background-color: {% if message.tags == 'success' %}#d4edda{% else %}#f8d7da{% endif %}; border: 1px solid currentColor; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="margin: 0; color: {% if message.tags == 'success' %}#155724{% else %}#721c24{% endif %}; font-weight: bold;">
+                {{ message }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
-    <!-- HEADER -->
     <div class="contact-header">
         <span class="contact-pill">Contact</span>
         <h1>Always happy to <span>connect.</span></h1>
@@ -15,40 +26,28 @@
         </p>
     </div>
 
-    <!-- MAIN GRID -->
     <div class="contact-grid">
-
-        <!-- LEFT SIDE -->
         <div class="contact-info">
-
             <div class="info-card">
                 <h3>WhatsApp</h3>
                 <p>Tell me about your idea and I’m here to help.</p>
-                <a href="https://wa.me/917016324864" target="_blank">
-                    +91 7016324864
-                </a>
+                <a href="https://wa.me/917016324864" target="_blank">+91 7016324864</a>
             </div>
 
             <div class="info-card">
                 <h3>LinkedIn</h3>
                 <p>Let’s connect professionally.</p>
-                <a href="https://www.linkedin.com/in/bkt0/" target="_blank">
-                    View Profile
-                </a>
+                <a href="https://www.linkedin.com/in/bkt0/" target="_blank">View Profile</a>
             </div>
 
             <div class="info-card">
                 <h3>GitHub</h3>
                 <p>Check out my projects & code.</p>
-                <a href="https://github.com/krsna-t" target="_blank">
-                    https://github.com/krsna-t
-                </a>
+                <a href="https://github.com/krsna-t" target="_blank">https://github.com/krsna-t</a>
             </div>
-
         </div>
 
-        <!-- RIGHT SIDE -->
-        <form class="contact-form" method="post">
+        <form class="contact-form" method="post" action="{% url 'contact' %}" id="contact-form-element">
             {% csrf_token %}
 
             <label>Name *</label>
@@ -69,11 +68,30 @@
             <label>Message *</label>
             <textarea name="message" rows="6" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit-button">Submit</button>
         </form>
-
     </div>
-
 </section>
+
+<script>
+    const contactForm = document.getElementById('contact-form-element');
+    const submitBtn = document.getElementById('submit-button');
+
+    contactForm.addEventListener('submit', function() {
+        // This prevents the user from clicking multiple times
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+        submitBtn.style.opacity = "0.6";
+        submitBtn.style.cursor = "not-allowed";
+    });
+
+    if (messageContainer) {
+        setTimeout(function() {
+            messageContainer.style.opacity = '0';
+            setTimeout(function() {
+                messageContainer.style.display = 'none';
+            }, 500); // Wait for fade out animation to finish
+        }, 7000);
+</script>
 
 {% endblock %}
