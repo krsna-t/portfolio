@@ -76,22 +76,26 @@
 <script>
     const contactForm = document.getElementById('contact-form-element');
     const submitBtn = document.getElementById('submit-button');
+    const messageContainer = document.querySelector('[style*="position: fixed"]');
 
-    contactForm.addEventListener('submit', function() {
-        // This prevents the user from clicking multiple times
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Sending...";
-        submitBtn.style.opacity = "0.6";
-        submitBtn.style.cursor = "not-allowed";
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+            submitBtn.style.opacity = "0.6";
+            submitBtn.style.cursor = "not-allowed";
+        });
+    }
 
     if (messageContainer) {
         setTimeout(function() {
+            messageContainer.style.transition = "opacity 0.5s ease";
             messageContainer.style.opacity = '0';
             setTimeout(function() {
                 messageContainer.style.display = 'none';
-            }, 500); // Wait for fade out animation to finish
-        }, 7000);
+            }, 500); 
+        }, 7000); 
+    }
 </script>
 
 {% endblock %}
