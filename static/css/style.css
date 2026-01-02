@@ -120,7 +120,7 @@ body {
 .showcase-track {
     display: flex;
     width: max-content;
-    animation: scroll 15s linear infinite;
+    animation: scroll 25s linear infinite;
 }
 
 
@@ -648,7 +648,7 @@ body {
 }
 
 .project-image {
-    height: 200px;
+    height: 500px;
 }
 
 .project-bg-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
@@ -780,6 +780,8 @@ body {
     z-index: 2;
 }
 
+
+
 .projects-footer-cta {
     display: flex;
     justify-content: center;
@@ -801,6 +803,20 @@ body {
     background: #222;
 }
 
+/* here */
+.home-projects .project-image {
+    height: 220px;         
+    overflow: hidden;       
+}
+
+/* Make image fit perfectly inside */
+.home-projects .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      
+    display: block;        
+}
+/* here */
 .whoami-block {
     width: 100%;
     clear: both;
@@ -988,9 +1004,7 @@ body {
 
 
 
-/* ================================
-   EXPERIENCE SECTION (SCOPED)
-================================ */
+/* experience card */
 
 /* Container Background */
 #experience-root {
@@ -1101,4 +1115,38 @@ body {
     #experience-root .experience-grid { grid-template-columns: 1fr; gap: 40px; }
     #experience-root .timeline-path { display: none; }
     #experience-root .experience-card { margin: 0 auto; opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* below the website blur effect  */
+
+
+.bottom-blur-overlay {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    pointer-events: none;
+    z-index: 999; 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* Fade blur upward */
+    mask-image: linear-gradient(
+        to top,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.85) 25%,
+        rgba(0,0,0,0.4) 55%,
+        rgba(0,0,0,0) 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to top,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.85) 25%,
+        rgba(0,0,0,0.4) 55%,
+        rgba(0,0,0,0) 100%
+    );
 }
