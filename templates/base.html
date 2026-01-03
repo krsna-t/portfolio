@@ -73,7 +73,7 @@
     {% endblock %}
 
 </div>
-<footer class="footer">
+<footer class="footer relative overflow-hidden">
     <div class="footer-top">
 
         <!-- LEFT -->
@@ -128,8 +128,24 @@
     </div>
 
     <!-- BOTTOM -->
-    <div class="footer-bottom">
-        <p>© {{ year|default:"2025" }} Portfolio by Balkrishna Tiwari</p>
+    <div class="footer-bottom relative">
+        <hr class="border-t border-dashed border-black/20
+                -mx-6 md:-mx-10 lg:-mx-16 mb-6" />
+
+        <p class="relative z-10">
+            © {{ year|default:"2025" }} Portfolio by Balkrishna Tiwari
+        </p>
+
+        <span
+            class="absolute right-[-80px] bottom-[-30px] 
+                pr-24
+                text-[50px] font-bold
+                text-black/90
+                pointer-events-none select-none
+                whitespace-nowrap
+                z-0">
+            Balkrishna Tiwari
+        </span>
     </div>
 </footer>
 

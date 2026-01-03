@@ -445,7 +445,6 @@ body {
 .footer-bottom {
     margin-top: 60px;
     padding-top: 20px;
-    border-top: 1px dashed #e0e0e0;
     text-align: left;
 }
 
@@ -453,6 +452,7 @@ body {
     font-size: 14px;
     color: #777;
 }
+
 
 /* ---------------- RESPONSIVE ---------------- */
 
@@ -648,7 +648,7 @@ body {
 }
 
 .project-image {
-    height: 500px;
+    height: 250px;
 }
 
 .project-bg-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
@@ -805,7 +805,7 @@ body {
 
 /* here */
 .home-projects .project-image {
-    height: 220px;         
+    height: 300px;         
     overflow: hidden;       
 }
 
@@ -1127,7 +1127,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 220px;
+    height: 120px;
     pointer-events: none;
     z-index: 999; 
     backdrop-filter: blur(14px);
@@ -1137,16 +1137,16 @@ body {
     mask-image: linear-gradient(
         to top,
         rgba(0,0,0,1) 0%,
-        rgba(0,0,0,0.85) 25%,
-        rgba(0,0,0,0.4) 55%,
-        rgba(0,0,0,0) 100%
+        rgba(0,0,0,0.4) 25%,
+        rgba(0,0,0,0.2) 45%,
+        rgba(0,0,0,0) 70%
     );
 
     -webkit-mask-image: linear-gradient(
         to top,
         rgba(0,0,0,1) 0%,
-        rgba(0,0,0,0.85) 25%,
-        rgba(0,0,0,0.4) 55%,
-        rgba(0,0,0,0) 100%
+        rgba(0,0,0,0.6) 25%,
+        rgba(0,0,0,0.25) 45%,
+        rgba(0,0,0,0) 70%
     );
 }
